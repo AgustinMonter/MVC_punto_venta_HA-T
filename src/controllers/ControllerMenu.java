@@ -10,9 +10,16 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import models.ModelMenu;
-import views.ViewLogin;
 import views.ViewMenu;
+
+
+import views.ViewLogin;
+import models.ModelLogin;
+import controllers.ControllerLogin;
+
 import views.ViewProveedores;
+import models.ModelProveedores;
+import controllers.ControllerProveedores;
 /**
  *
  * @author Edgar
@@ -34,7 +41,7 @@ public class ControllerMenu {
     public void initComponents() {
         viewMenu.setLocationRelativeTo(null);
         System.out.println("menu");
-        viewMenu.setVisible(true);
+        viewMenu.setVisible(false);
         }
     
     
@@ -65,19 +72,21 @@ public class ControllerMenu {
         }
         private void jbtn_proveedores_actionPerformed() {
         System.out.println("Action del boton jbtn_proveedores");
-        ViewProveedores proveedores = new ViewProveedores();
-        ViewMenu menu = new ViewMenu();
-        proveedores.setVisible(true);
-        menu.setVisible(false);
+        ModelProveedores modelProveedores = new ModelProveedores();
+        ViewProveedores viewProveedores = new ViewProveedores();
+        ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
+        viewProveedores.setVisible(true);
+        viewMenu.setVisible(false); 
         }
         private void jmi_cerrar_sesion_actionPerformed() {
         System.out.println("Action del boton jbtn_iniciar_secion");
         int resp=JOptionPane.showConfirmDialog(null,"Desea Cerrar sesión?");
             if (JOptionPane.OK_OPTION == resp){
-                ViewLogin login=new ViewLogin();
-                ViewMenu menu=new ViewMenu();
-                login.setVisible(true);
-                menu.setVisible(false);
+                ModelLogin modelLogin = new ModelLogin();
+                ViewLogin viewLogin = new ViewLogin();
+                ControllerLogin controllerLogin = new ControllerLogin(modelLogin, viewLogin);
+                viewLogin.setVisible(true);
+                viewMenu.setVisible(false);
             }
         }
 }

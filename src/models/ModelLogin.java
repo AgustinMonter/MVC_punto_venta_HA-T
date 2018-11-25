@@ -13,7 +13,12 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 import views.ViewLogin;
+import models.ModelLogin;
+import controllers.ControllerLogin;
+
 import views.ViewMenu;
+import models.ModelMenu;
+import controllers.ControllerMenu;
 /**
  *
  * @author Edgar
@@ -51,6 +56,7 @@ public class ModelLogin {
     public void conectarDB() {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/acme", "root", "");
+            //conexion = DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/ferreteriaacme", "tic41", "tic41");
             st = conexion.createStatement();
             String sql = "SELECT * FROM usuarios_sistema;";
             System.out.println(sql);
@@ -79,16 +85,16 @@ public class ModelLogin {
             String existe=rs.getString("existe");
             Existe=Integer.parseInt(existe);
             if (Existe==1){
-                views.ViewMenu jfmenu=new ViewMenu();
-                views.ViewLogin jflogin=new ViewLogin();
-                jfmenu.setVisible(true);
-                jflogin.setVisible(false);
+                ModelMenu modelMenu = new ModelMenu();
+                ViewMenu viewMenu = new ViewMenu();
+                ControllerMenu controllerMenu = new ControllerMenu(modelMenu, viewMenu);
+                viewMenu.setVisible(true);
             }
             else{
                 JOptionPane.showMessageDialog(null,"Verfica que el Usuario o la Contraseña sean correctas");
-                //ViewLogin.setContentPane(ControllerLogin.viewlogin);
-                //ViewLogin.revalidate();
-                //ViewLogin.repaint();
+                ModelLogin modelLogin = new ModelLogin();
+                ViewLogin viewLogin = new ViewLogin();
+                ControllerLogin controllerLogin = new ControllerLogin(modelLogin, viewLogin);
            }
          } catch(SQLException err){ 
             JOptionPane.showMessageDialog(null,"Error "+err.getMessage()); 

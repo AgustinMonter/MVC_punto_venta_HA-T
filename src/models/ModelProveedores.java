@@ -154,6 +154,7 @@ public class ModelProveedores {
     public void conectarDB() {
         try {
             conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/acme", "root", "");
+            //conexion = DriverManager.getConnection("jdbc:mysql://raspberry-tic41.zapto.org:3306/ferreteriaacme", "tic41", "tic41");
             st = conexion.createStatement();
             String sql = "SELECT * FROM proveedor;";
             System.out.println(sql);
@@ -184,23 +185,30 @@ public class ModelProveedores {
             JOptionPane.showMessageDialog(null, "Error model 102: Erro al llenar datos " + err.getMessage());
         }
     }
+    public void getValues(){
+        try{
+            id = this.getId();
+            nombre=this.getNombre();
+            apellidop = this.getApellidop();
+            apellidom = this.getApellidom();
+            telefono = this.getTelefono();
+            correo = this.getCorreo();
+            calle = this.getCalle();
+            numero = this.getNumero();
+            colonia = this.getColonia();
+            ciudad = this.getCiudad();
+            cp = this.getCp();
+            estado = this.getEstado();
+            razon_social = this.getRazon_social();
+            rfc = this.getRfc();  
+        } catch (Exception err) {
+            JOptionPane.showMessageDialog(null, "Error model 103: Erro al obtener datos " + err.getMessage());
+        }
+    }
     public void moverPrimerRegistro() {
         try {
             rs.first();
-            id = rs.getString("id_proveedor");
-            nombre = rs.getString("nombre_proveedor");
-            apellidop = rs.getString("apellido_paterno");
-            apellidom = rs.getString("apellido_materno");
-            telefono = rs.getString("telefono");
-            correo = rs.getString("correo");
-            calle = rs.getString("calle");
-            numero = rs.getString("no_exterior");
-            colonia = rs.getString("colonia");
-            ciudad = rs.getString("ciudad");
-            cp = rs.getString("cp");
-            estado = rs.getString("estado");
-            razon_social = rs.getString("razon_social");
-            rfc = rs.getString("rfc");
+            setValues();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error : Al mover primer registro " + ex.getMessage());
         }
@@ -209,20 +217,7 @@ public class ModelProveedores {
         try {
             if (!rs.isLast()) {
                 rs.next();
-                id = rs.getString("id_proveedor");
-            nombre = rs.getString("nombre_proveedor");
-            apellidop = rs.getString("apellido_paterno");
-            apellidom = rs.getString("apellido_materno");
-            telefono = rs.getString("telefono");
-            correo = rs.getString("correo");
-            calle = rs.getString("calle");
-            numero = rs.getString("no_exterior");
-            colonia = rs.getString("colonia");
-            ciudad = rs.getString("ciudad");
-            cp = rs.getString("cp");
-            estado = rs.getString("estado");
-            razon_social = rs.getString("razon_social");
-            rfc = rs.getString("rfc");
+                setValues();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: Al mover siguiente registro" + ex.getMessage());
@@ -232,20 +227,7 @@ public class ModelProveedores {
         try {
             if (!rs.isFirst()) {
                 rs.previous();
-                id = rs.getString("id_proveedor");
-            nombre = rs.getString("nombre_proveedor");
-            apellidop = rs.getString("apellido_paterno");
-            apellidom = rs.getString("apellido_materno");
-            telefono = rs.getString("telefono");
-            correo = rs.getString("correo");
-            calle = rs.getString("calle");
-            numero = rs.getString("no_exterior");
-            colonia = rs.getString("colonia");
-            ciudad = rs.getString("ciudad");
-            cp = rs.getString("cp");
-            estado = rs.getString("estado");
-            razon_social = rs.getString("razon_social");
-            rfc = rs.getString("rfc");
+                setValues();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: Al mover anterior registro" + ex.getMessage());
@@ -254,41 +236,15 @@ public class ModelProveedores {
     public void moverUltimoRegistro() {
         try {
             rs.last();
-            id = rs.getString("id_proveedor");
-            nombre = rs.getString("nombre_proveedor");
-            apellidop = rs.getString("apellido_paterno");
-            apellidom = rs.getString("apellido_materno");
-            telefono = rs.getString("telefono");
-            correo = rs.getString("correo");
-            calle = rs.getString("calle");
-            numero = rs.getString("no_exterior");
-            colonia = rs.getString("colonia");
-            ciudad = rs.getString("ciudad");
-            cp = rs.getString("cp");
-            estado = rs.getString("estado");
-            razon_social = rs.getString("razon_social");
-            rfc = rs.getString("rfc");
+            setValues();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: Al  mover ultimo registro" + ex.getMessage());
         }
     }
     public void guardarRegistro(){
         try {
-            id = rs.getString("id_proveedor");
-            nombre = rs.getString("nombre_proveedor");
-            apellidop = rs.getString("apellido_paterno");
-            apellidom = rs.getString("apellido_materno");
-            telefono = rs.getString("telefono");
-            correo = rs.getString("correo");
-            calle = rs.getString("calle");
-            numero = rs.getString("no_exterior");
-            colonia = rs.getString("colonia");
-            ciudad = rs.getString("ciudad");
-            cp = rs.getString("cp");
-            estado = rs.getString("estado");
-            razon_social = rs.getString("razon_social");
-            rfc = rs.getString("rfc");
-            st.executeUpdate("INSERT INTO proveedor (id_proveedor, nombre_proveedor, apellido_paterno, apellido_materno, telefono, correo, calle, no_exterior, colonia, ciudad, cp, estado, rfc, razon_social)" + " VALUES ('"+ id +"','"+ nombre +"','"+ apellidop +"',"+ apellidom +"','"+ telefono +"','"+ correo +"','"+ calle +"','"+ numero +"','"+ colonia +"','"+ ciudad +"','"+ cp +"','"+ estado +"','"+ rfc +"','"+ razon_social +"');");
+            getValues();
+            st.executeUpdate("INSERT INTO proveedor (nombre_proveedor, apellido_paterno, apellido_materno, telefono, correo, calle, no_exterior, colonia, ciudad, cp, estado, rfc, razon_social)" + " VALUES ('"+ nombre +"','"+ apellidop +"','"+ apellidom +"','"+ telefono +"','"+ correo +"','"+ calle +"','"+ numero +"','"+ colonia +"','"+ ciudad +"','"+ cp +"','"+ estado +"','"+ rfc +"','"+ razon_social +"');");
             this.conectarDB();
             this.moverUltimoRegistro();
             JOptionPane.showMessageDialog(null, "Dato guardado Correctamente" );
@@ -298,20 +254,7 @@ public class ModelProveedores {
     }
     public void guardarCambios(){
         try {
-            id = rs.getString("id_proveedor");
-            nombre = rs.getString("nombre_proveedor");
-            apellidop = rs.getString("apellido_paterno");
-            apellidom = rs.getString("apellido_materno");
-            telefono = rs.getString("telefono");
-            correo = rs.getString("correo");
-            calle = rs.getString("calle");
-            numero = rs.getString("no_exterior");
-            colonia = rs.getString("colonia");
-            ciudad = rs.getString("ciudad");
-            cp = rs.getString("cp");
-            estado = rs.getString("estado");
-            razon_social = rs.getString("razon_social");
-            rfc = rs.getString("rfc");
+            getValues();
             st.executeUpdate("UPDATE proveedor SET nombre_proveedor = '"+ nombre +"', apellido_paterno = '"+ apellidop +"', apellido_materno = '"+ apellidom +"', telefono = '"+ telefono +"', correo = '"+ correo +"', calle = '"+ calle +"', no_exterior = '"+ numero +"', colonia = '"+ colonia +"', ciudad = '"+ ciudad +"', cp = '"+ cp +"', estado = '"+ estado +"', rfc = '"+ rfc +"', razon_social = '"+ razon_social +"' WHERE id_proveedor = "+ id +"; ");
             this.conectarDB();
             this.moverUltimoRegistro();
@@ -329,6 +272,7 @@ public class ModelProveedores {
             st.executeUpdate("DELETE FROM proveedor WHERE id_proveedor = "+ id +"; ");
             this.conectarDB();
             this.moverUltimoRegistro();
+            JOptionPane.showMessageDialog(null, "Registro eliminado" );
             }
             else{
                 moverPrimerRegistro();

@@ -9,9 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import models.ModelProveedores;
-import views.ViewLogin;
 import views.ViewMenu;
 import views.ViewProveedores;
+
+import views.ViewLogin;
+import models.ModelLogin;
+import controllers.ControllerLogin;
+
+import views.ViewMenu;
+import models.ModelMenu;
+import controllers.ControllerMenu;
 /**
  *
  * @author Edgar
@@ -92,18 +99,46 @@ public class ControllerProveedores {
         viewProveedores.jtf_rfc.setText(modelProveedores.getRfc());
         viewProveedores.jtf_razon_social.setText(modelProveedores.getRazon_social());
     }
+    public void noEditar(){
+        viewProveedores.jtf_id.setEditable(false);
+        viewProveedores.jtf_nombre.setEditable(false);
+        viewProveedores.jtf_apaterno.setEditable(false);
+        viewProveedores.jtf_amaterno.setEditable(false);
+        viewProveedores.jtf_telefono.setEditable(false);
+        viewProveedores.jtf_correo.setEditable(false);
+        viewProveedores.jtf_calle.setEditable(false);
+        viewProveedores.jtf_numero_e.setEditable(false);
+        viewProveedores.jtf_colonia.setEditable(false);
+        viewProveedores.jtf_ciudad.setEditable(false);
+        viewProveedores.jtf_codigo_p.setEditable(false);
+        viewProveedores.jtf_estado.setEditable(false);
+        viewProveedores.jtf_rfc.setEditable(false);
+        viewProveedores.jtf_razon_social.setEditable(false);
+    }
+    public void editar(){
+        viewProveedores.jtf_id.setEditable(false);
+        viewProveedores.jtf_nombre.setEditable(true);
+        viewProveedores.jtf_apaterno.setEditable(true);
+        viewProveedores.jtf_amaterno.setEditable(true);
+        viewProveedores.jtf_telefono.setEditable(true);
+        viewProveedores.jtf_correo.setEditable(true);
+        viewProveedores.jtf_calle.setEditable(true);
+        viewProveedores.jtf_numero_e.setEditable(true);
+        viewProveedores.jtf_colonia.setEditable(true);
+        viewProveedores.jtf_ciudad.setEditable(true);
+        viewProveedores.jtf_codigo_p.setEditable(true);
+        viewProveedores.jtf_estado.setEditable(true);
+        viewProveedores.jtf_rfc.setEditable(true);
+        viewProveedores.jtf_razon_social.setEditable(true);
+    }
     public void initComponents() {
         viewProveedores.setLocationRelativeTo(null);
         viewProveedores.setVisible(true);
-        //viewProveedores.jbtn_guardar.setVisible(false);
-        //viewProveedores.jbtn_cancelarmodificar.setVisible(false);
-        //viewProveedores.jbtn_cancelarnuevo.setVisible(false);
-        //viewProveedores.jbtn_guardarm.setVisible(false);
-        //viewProveedores.jtf_nombre.setEditable(true);
-        //viewProveedores.jtf_apaterno.setEditable(false);
-        //viewProveedores.jtf_amaterno.setEditable(false);
-        //viewProveedores.jtf_telefono.setEditable(false);
-        //viewProveedores.jtf_rfc.setEditable(false);
+        viewProveedores.jbtn_guardar.setVisible(false);
+        viewProveedores.jbtn_cancelarmodificar.setVisible(false);
+        viewProveedores.jbtn_cancelarnuevo.setVisible(false);
+        viewProveedores.jbtn_guardarm.setVisible(false);
+        noEditar();
     }
     private void jbtn_primero_actionPerformed() {
         System.out.println("Action del boton jbtn_primero");
@@ -142,12 +177,12 @@ public class ControllerProveedores {
         viewProveedores.jtf_razon_social.setText(modelProveedores.getRazon_social());
     }
     public void jbtn_limpiar_actionPerformed(){
-        //viewProveedores.jbtn_guardar.setVisible(true);
-        //viewProveedores.jp_navegacion.setVisible(false);
-        //viewProveedores.jbtn_modificar.setVisible(false);
-        //viewProveedores.jbtn_nuevo.setVisible(false);
-        //viewProveedores.jbtn_borrar.setVisible(false);
-        //viewProveedores.jbtn_cancelarnuevo.setVisible(true);
+        viewProveedores.jbtn_guardar.setVisible(true);
+        viewProveedores.jp_navegacion.setVisible(false);
+        viewProveedores.jbtn_modificar.setVisible(false);
+        viewProveedores.jbtn_nuevo.setVisible(false);
+        viewProveedores.jbtn_borrar.setVisible(false);
+        viewProveedores.jbtn_cancelarnuevo.setVisible(true);
         viewProveedores.jtf_id.setText("");
         viewProveedores.jtf_nombre.setText("");
         viewProveedores.jtf_apaterno.setText("");
@@ -162,6 +197,7 @@ public class ControllerProveedores {
         viewProveedores.jtf_estado.setText("");
         viewProveedores.jtf_rfc.setText("");
         viewProveedores.jtf_razon_social.setText("");
+        editar();
     }
     private void jbtn_guardar_actionPerformed(){
         modelProveedores.setId(viewProveedores.jtf_id.getText());
@@ -180,33 +216,28 @@ public class ControllerProveedores {
         modelProveedores.setRazon_social(viewProveedores.jtf_razon_social.getText());
         modelProveedores.guardarRegistro();
         cancelarNuevo_actionPerformed();
+        initComponents();
     }
     public void cancelarNuevo_actionPerformed(){
         modelProveedores.conectarDB();
         viewProveedores.jbtn_cancelarnuevo.setVisible(false);
-        viewProveedores.jtf_nombre.setEditable(false);
-        viewProveedores.jtf_apaterno.setEditable(false);
-        viewProveedores.jtf_amaterno.setEditable(false);
-        viewProveedores.jtf_telefono.setEditable(false);
-        viewProveedores.jtf_rfc.setEditable(false);
         viewProveedores.jbtn_guardar.setVisible(false);
         viewProveedores.jp_navegacion.setVisible(true);
         viewProveedores.jbtn_modificar.setVisible(true);
         viewProveedores.jbtn_borrar.setVisible(true);
         viewProveedores.jbtn_nuevo.setVisible(true);
+        noEditar();
+        setValues();
+        initComponents();
     }
     private void jbtn_modificar_actionPerformed(){
-        viewProveedores.jtf_nombre.setEditable(true);
-        viewProveedores.jtf_apaterno.setEditable(true);
-        viewProveedores.jtf_amaterno.setEditable(true);
-        viewProveedores.jtf_telefono.setEditable(true);
-        viewProveedores.jtf_rfc.setEditable(true);
         viewProveedores.jbtn_nuevo.setVisible(false);
         viewProveedores.jbtn_cancelarmodificar.setVisible(true);
         viewProveedores.jp_navegacion.setVisible(false);
         viewProveedores.jbtn_guardarm.setVisible(true);
         viewProveedores.jbtn_borrar.setVisible(false);
         viewProveedores.jbtn_modificar.setVisible(false);
+        editar();
     }
     private void jbtn_guardarCambios_actionPerformed(){
         modelProveedores.setId(viewProveedores.jtf_id.getText());
@@ -226,6 +257,7 @@ public class ControllerProveedores {
         modelProveedores.guardarCambios();
         modelProveedores.conectarDB();
         cancelarNuevo_actionPerformed();
+        initComponents();
     }
     private void jbtn_eliminar_actionPerformed(){
         modelProveedores.setId(viewProveedores.jtf_id.getText());
@@ -245,25 +277,28 @@ public class ControllerProveedores {
         modelProveedores.borrarRegistro();
         modelProveedores.conectarDB();
         cancelarNuevo_actionPerformed();
+        initComponents();
     }
     private void jmi_cerrar_sesion_actionPerformed() {
         System.out.println("Action del boton jbtn_cerrar_sesion");
         int resp=JOptionPane.showConfirmDialog(null,"Desea Cerrar sesión?");
             if (JOptionPane.OK_OPTION == resp){
-                ViewLogin login=new ViewLogin();
-                ViewProveedores proveedor=new ViewProveedores();
-                login.setVisible(true);
-                proveedor.setVisible(false);
+                ModelLogin modelLogin = new ModelLogin();
+                ViewLogin viewLogin = new ViewLogin();
+                ControllerLogin controllerLogin = new ControllerLogin(modelLogin, viewLogin);
+                viewLogin.setVisible(true);
+                viewProveedores.setVisible(false);
             }
         }
     private void jmi_menu_actionPerformed() {
         System.out.println("Action del boton jbtn_menu");
         int resp=JOptionPane.showConfirmDialog(null,"Desea ir a menu?");
             if (JOptionPane.OK_OPTION == resp){
-                ViewMenu menu=new ViewMenu();
-                ViewProveedores proveedor=new ViewProveedores();
-                menu.setVisible(true);
-                proveedor.setVisible(false);
+                ModelMenu modelMenu = new ModelMenu();
+                ViewMenu viewMenu = new ViewMenu();
+                ControllerMenu controllerMenu = new ControllerMenu(modelMenu, viewMenu);
+                viewMenu.setVisible(true);
+                viewProveedores.setVisible(false);
             }
         }
 }
