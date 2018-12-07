@@ -207,7 +207,7 @@ public class ViewProveedores extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Proveedores ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 50, 580, 15);
+        jLabel1.setBounds(0, 50, 600, 15);
 
         jp_navegacion.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -318,7 +318,7 @@ public class ViewProveedores extends javax.swing.JFrame {
         );
 
         getContentPane().add(jp_modificacionbd);
-        jp_modificacionbd.setBounds(440, 80, 138, 156);
+        jp_modificacionbd.setBounds(440, 80, 138, 166);
 
         jp_botonesalternativos.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -350,7 +350,7 @@ public class ViewProveedores extends javax.swing.JFrame {
         );
 
         getContentPane().add(jp_botonesalternativos);
-        jp_botonesalternativos.setBounds(440, 240, 140, 90);
+        jp_botonesalternativos.setBounds(440, 260, 140, 90);
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 0));
 

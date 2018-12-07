@@ -35,13 +35,10 @@ public class ViewMenu extends javax.swing.JFrame {
         jbtn_clientes = new javax.swing.JButton();
         jbtn_compras = new javax.swing.JButton();
         jbtn_ventas = new javax.swing.JButton();
-        jbtn_reportes = new javax.swing.JButton();
         jbtn_sucursales = new javax.swing.JButton();
-        jbtn_empleados = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jm_archivo = new javax.swing.JMenu();
-        jmi_borrar_cuenta = new javax.swing.JMenuItem();
         jmi_crear_cuenta = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         jmi_cerrar_sesion = new javax.swing.JMenuItem();
@@ -55,132 +52,136 @@ public class ViewMenu extends javax.swing.JFrame {
         jl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_titulo.setText("Ferreterias ACME");
         getContentPane().add(jl_titulo);
-        jl_titulo.setBounds(20, 10, 500, 32);
+        jl_titulo.setBounds(0, 10, 550, 32);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(10, 40, 530, 10);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
 
-        jbtn_productos.setBackground(new java.awt.Color(204, 204, 204));
+        jbtn_productos.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_productos.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jbtn_productos.setForeground(new java.awt.Color(0, 153, 153));
+        jbtn_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/technical-support_icon-icons.com_52812.png"))); // NOI18N
         jbtn_productos.setText("Productos");
         jbtn_productos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_productos.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jbtn_productos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_productosActionPerformed(evt);
             }
         });
 
-        jbtn_proveedores.setBackground(new java.awt.Color(204, 204, 204));
+        jbtn_proveedores.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_proveedores.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jbtn_proveedores.setForeground(new java.awt.Color(0, 153, 153));
+        jbtn_proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/technical-support_icon-icons.com_52812.png"))); // NOI18N
         jbtn_proveedores.setText("Proveedores");
         jbtn_proveedores.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_proveedores.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jbtn_proveedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_proveedoresActionPerformed(evt);
             }
         });
 
-        jbtn_clientes.setBackground(new java.awt.Color(204, 204, 204));
+        jbtn_clientes.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_clientes.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jbtn_clientes.setForeground(new java.awt.Color(0, 153, 153));
+        jbtn_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/technical-support_icon-icons.com_52812.png"))); // NOI18N
         jbtn_clientes.setText("Clientes");
         jbtn_clientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_clientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jbtn_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_clientesActionPerformed(evt);
             }
         });
 
-        jbtn_compras.setBackground(new java.awt.Color(204, 204, 204));
+        jbtn_compras.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_compras.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jbtn_compras.setForeground(new java.awt.Color(0, 153, 153));
+        jbtn_compras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/technical-support_icon-icons.com_52812.png"))); // NOI18N
         jbtn_compras.setText("Compras");
         jbtn_compras.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_compras.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jbtn_compras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_comprasActionPerformed(evt);
             }
         });
 
-        jbtn_ventas.setBackground(new java.awt.Color(204, 204, 204));
+        jbtn_ventas.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_ventas.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jbtn_ventas.setForeground(new java.awt.Color(0, 153, 153));
+        jbtn_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/technical-support_icon-icons.com_52812.png"))); // NOI18N
         jbtn_ventas.setText("Ventas");
         jbtn_ventas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_ventas.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jbtn_ventas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_ventasActionPerformed(evt);
             }
         });
 
-        jbtn_reportes.setBackground(new java.awt.Color(204, 204, 204));
-        jbtn_reportes.setText("Reportes");
-        jbtn_reportes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtn_reportes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtn_reportesActionPerformed(evt);
-            }
-        });
-
-        jbtn_sucursales.setBackground(new java.awt.Color(204, 204, 204));
+        jbtn_sucursales.setBackground(new java.awt.Color(255, 255, 255));
+        jbtn_sucursales.setFont(new java.awt.Font("Elephant", 0, 18)); // NOI18N
+        jbtn_sucursales.setForeground(new java.awt.Color(0, 153, 153));
+        jbtn_sucursales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/technical-support_icon-icons.com_52812.png"))); // NOI18N
         jbtn_sucursales.setText("Sucursales");
         jbtn_sucursales.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jbtn_empleados.setBackground(new java.awt.Color(204, 204, 204));
-        jbtn_empleados.setText("Empleados");
-        jbtn_empleados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_sucursales.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtn_empleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtn_compras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtn_proveedores, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtn_sucursales, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(jbtn_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtn_ventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbtn_reportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jbtn_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_sucursales, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jbtn_proveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jbtn_compras, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_ventas, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtn_productos, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addComponent(jbtn_sucursales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtn_proveedores, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(jbtn_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbtn_compras, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                    .addComponent(jbtn_ventas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtn_empleados, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(jbtn_reportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jbtn_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_sucursales, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_clientes)
+                    .addComponent(jbtn_proveedores))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_ventas)
+                    .addComponent(jbtn_compras))
+                .addGap(19, 19, 19))
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 60, 530, 220);
+        jPanel2.setBounds(10, 60, 530, 232);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/391.jpg"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 550, 300);
+        jLabel2.setBounds(0, 0, 550, 320);
 
         jMenuBar1.setBackground(new java.awt.Color(255, 153, 51));
 
         jm_archivo.setBackground(new java.awt.Color(255, 51, 0));
         jm_archivo.setText("Archivo");
 
-        jmi_borrar_cuenta.setBackground(new java.awt.Color(255, 204, 51));
-        jmi_borrar_cuenta.setText("Borrar Cuenta Existente");
-        jm_archivo.add(jmi_borrar_cuenta);
-
         jmi_crear_cuenta.setBackground(new java.awt.Color(255, 204, 51));
-        jmi_crear_cuenta.setText("Crear Nueva Cuenta");
+        jmi_crear_cuenta.setText("Cuentas de usuario");
         jm_archivo.add(jmi_crear_cuenta);
         jm_archivo.add(jSeparator2);
 
@@ -192,7 +193,7 @@ public class ViewMenu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setBounds(0, 0, 566, 358);
+        setBounds(0, 0, 565, 376);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_productosActionPerformed
@@ -210,10 +211,6 @@ public class ViewMenu extends javax.swing.JFrame {
     private void jbtn_proveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_proveedoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtn_proveedoresActionPerformed
-
-    private void jbtn_reportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_reportesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbtn_reportesActionPerformed
 
     private void jbtn_ventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_ventasActionPerformed
         // TODO add your handling code here:
@@ -262,15 +259,12 @@ public class ViewMenu extends javax.swing.JFrame {
     public javax.swing.JPopupMenu.Separator jSeparator2;
     public javax.swing.JButton jbtn_clientes;
     public javax.swing.JButton jbtn_compras;
-    public javax.swing.JButton jbtn_empleados;
     public javax.swing.JButton jbtn_productos;
     public javax.swing.JButton jbtn_proveedores;
-    public javax.swing.JButton jbtn_reportes;
     public javax.swing.JButton jbtn_sucursales;
     public javax.swing.JButton jbtn_ventas;
     public javax.swing.JLabel jl_titulo;
     public javax.swing.JMenu jm_archivo;
-    public javax.swing.JMenuItem jmi_borrar_cuenta;
     public javax.swing.JMenuItem jmi_cerrar_sesion;
     public javax.swing.JMenuItem jmi_crear_cuenta;
     // End of variables declaration//GEN-END:variables

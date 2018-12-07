@@ -16,6 +16,14 @@ import controllers.ControllerMenu;
 import views.ViewProveedores;
 import models.ModelProveedores;
 import controllers.ControllerProveedores;
+
+import views.ViewClientes;
+import models.ModelClientes;
+import controllers.ControllerClientes;
+
+import views.ViewCrearCuenta;
+import models.ModelNuevaCuenta;
+import controllers.ControllerNuevaCuenta;
 /**
  *
  * @author Edgar
@@ -38,6 +46,13 @@ public class Main {
         ViewProveedores viewProveedores = new ViewProveedores();
         ControllerProveedores controllerProveedores = new ControllerProveedores(modelProveedores, viewProveedores);
         
+        ModelClientes modelClientes = new ModelClientes();
+        ViewClientes viewClientes = new ViewClientes();
+        ControllerClientes controllerClientes = new ControllerClientes(modelClientes, viewClientes);
+        
+        ModelNuevaCuenta modelNuevaCuenta = new ModelNuevaCuenta();
+        ViewCrearCuenta viewCrearCuenta = new ViewCrearCuenta();
+        ControllerNuevaCuenta controllerNuevaCuenta = new ControllerNuevaCuenta(modelNuevaCuenta, viewCrearCuenta);
     }
     
 }

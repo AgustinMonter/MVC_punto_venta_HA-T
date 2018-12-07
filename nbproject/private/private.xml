@@ -3,16 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewMenu.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewLogin.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelProveedores.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/main/Main.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelLogin.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/controllers/ControllerLogin.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/controllers/ControllerMenu.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewCliente.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/controllers/ControllerProveedores.java</file>
-            <file>file:/F:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewProveedores.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewProducto.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/controllers/ControllerMenu.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewSucursales.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelNuevaCuenta.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelDetalleCompra.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewMenu.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelCompras.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelProducto.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewVentas.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/controllers/ControllerProducto.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelClientes.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/main/Mainproducto.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewCompras.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/models/ModelDescuentoCompra.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/main/Main.java</file>
+            <file>file:/E:/Nueva%20carpeta/DA%20II/FerreteriasACME/src/views/ViewProveedores.java</file>
         </group>
     </open-files>
 </project-private>

@@ -6,12 +6,17 @@
 
 package views;
 
+import models.ModelLogin;
+import models.ModelLogin;
+import views.ViewLogin;
+
 /**
  *
  * @author Edgar
  */
 public class ViewLogin extends javax.swing.JFrame {
-
+    public ModelLogin modelLogin;
+    public ViewLogin viewLogin;
     /** Creates new form ViewLogin */
     public ViewLogin() {
         initComponents();
@@ -36,22 +41,23 @@ public class ViewLogin extends javax.swing.JFrame {
         jfp_contrasenia = new javax.swing.JPasswordField();
         jl_titulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().setLayout(null);
 
         jbtn_iniciar_sesion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jbtn_iniciar_sesion.setText("Iniciar sesión");
-        getContentPane().add(jbtn_iniciar_sesion);
-        jbtn_iniciar_sesion.setBounds(10, 130, 183, 25);
+        jbtn_iniciar_sesion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbtn_iniciar_sesionKeyPressed(evt);
+            }
+        });
 
         jbtn_salir.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jbtn_salir.setText("Salir");
-        getContentPane().add(jbtn_salir);
-        jbtn_salir.setBounds(220, 130, 183, 25);
 
         jp_login.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -96,22 +102,59 @@ public class ViewLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jp_login);
-        jp_login.setBounds(10, 50, 390, 75);
-
         jl_titulo.setFont(new java.awt.Font("Algerian", 0, 24)); // NOI18N
         jl_titulo.setForeground(new java.awt.Color(255, 255, 255));
         jl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl_titulo.setText("Ferreterias ACME");
-        getContentPane().add(jl_titulo);
-        jl_titulo.setBounds(0, 10, 420, 32);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/views/391.jpg"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 410, 170);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jp_login, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jbtn_iniciar_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jl_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jp_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbtn_iniciar_sesion)
+                    .addComponent(jbtn_salir)))
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         setBounds(0, 0, 426, 208);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtn_iniciar_sesionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbtn_iniciar_sesionKeyPressed
+        
+        System.out.println("Action del boton jbtn_iniciar_secion");
+        modelLogin.setNombreusuario(viewLogin.jtf_nom_usuario.getText());
+        modelLogin.setContrasenia(viewLogin.jfp_contrasenia.getText());
+        viewLogin.jtf_nom_usuario.setText("");
+        viewLogin.jfp_contrasenia.setText("");
+        modelLogin.iniciarSecion();
+        viewLogin.setVisible(false);
+    }//GEN-LAST:event_jbtn_iniciar_sesionKeyPressed
 
     /**
      * @param args the command line arguments
@@ -151,6 +194,7 @@ public class ViewLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     public javax.swing.JButton jbtn_iniciar_sesion;
     public javax.swing.JButton jbtn_salir;
     public javax.swing.JPasswordField jfp_contrasenia;

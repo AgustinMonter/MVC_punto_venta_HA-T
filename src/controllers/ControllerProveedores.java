@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import models.ModelProveedores;
-import views.ViewMenu;
 import views.ViewProveedores;
 
 import views.ViewLogin;
@@ -133,7 +132,7 @@ public class ControllerProveedores {
     }
     public void initComponents() {
         viewProveedores.setLocationRelativeTo(null);
-        viewProveedores.setVisible(true);
+        viewProveedores.setVisible(false);
         viewProveedores.jbtn_guardar.setVisible(false);
         viewProveedores.jbtn_cancelarmodificar.setVisible(false);
         viewProveedores.jbtn_cancelarnuevo.setVisible(false);
@@ -217,6 +216,7 @@ public class ControllerProveedores {
         modelProveedores.guardarRegistro();
         cancelarNuevo_actionPerformed();
         initComponents();
+        viewProveedores.setVisible(true);
     }
     public void cancelarNuevo_actionPerformed(){
         modelProveedores.conectarDB();
@@ -229,6 +229,7 @@ public class ControllerProveedores {
         noEditar();
         setValues();
         initComponents();
+        viewProveedores.setVisible(true);
     }
     private void jbtn_modificar_actionPerformed(){
         viewProveedores.jbtn_nuevo.setVisible(false);
@@ -258,6 +259,7 @@ public class ControllerProveedores {
         modelProveedores.conectarDB();
         cancelarNuevo_actionPerformed();
         initComponents();
+        viewProveedores.setVisible(true);
     }
     private void jbtn_eliminar_actionPerformed(){
         modelProveedores.setId(viewProveedores.jtf_id.getText());
@@ -278,6 +280,7 @@ public class ControllerProveedores {
         modelProveedores.conectarDB();
         cancelarNuevo_actionPerformed();
         initComponents();
+        viewProveedores.setVisible(true);
     }
     private void jmi_cerrar_sesion_actionPerformed() {
         System.out.println("Action del boton jbtn_cerrar_sesion");
